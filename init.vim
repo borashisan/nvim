@@ -27,6 +27,7 @@ set clipboard+=unnamed
 
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 call plug#begin()
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-hijack.vim'
@@ -46,12 +47,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 call plug#end()
 
+"ctags
+nnoremap <C-]> g<C-]> 
+
 " coc
 autocmd FileType scss setl iskeyword+=@-@
 
 " neoterm 
 nnoremap <c-t><c-t> :Ttoggle<CR>
-tnoremap <c-t><c-t> <C-¥><C-n>:Ttoggle<CR>
 let g:neoterm_default_mod = 'belowright'
 let g:neoterm_size=15
 let g:neoterm_autoinsert = 1
