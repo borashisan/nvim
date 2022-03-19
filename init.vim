@@ -29,6 +29,8 @@ nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 call plug#begin()
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'mattn/vim-lsp-settings'
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-hijack.vim'
 Plug 'tomasiser/vim-code-dark'
@@ -46,6 +48,30 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 call plug#end()
+
+"emmet-vim
+let g:user_emmet_settings = {
+\  'variables' : {
+\    'lang' : "ja"
+\  },
+\  'indentation' : '  ',
+\  'html' : {
+\    'snippets' : {
+\      'html:5': "<!DOCTYPE html>\n"
+\        ."<html lang=\"${lang}\">\n"
+\        ."<head>\n"
+\        ."\t<meta charset=\"${charset}\" \/>\n"
+\        ."\t<link rel=\"stylesheet\" href=\"\" \/>\n"
+\        ."\t<meta name=\"description\" content=\"\" \/>\n"
+\        ."\t<title></title>\n"
+\        ."</head>\n"
+\        ."<body>\n\t${child}|\n\t<script type=\"text/javascript\" src=\"\"></script>\n</body>\n"
+\        ."</html>",
+\    }
+\  }
+\}
+"vim-lsp
+"nnoremap <expr> <C-]> execute('LspPeekDefinition') =~ "not supported" ? "\<C-]>" : ":LspDefinition<cr>"
 
 "ctags
 nnoremap <C-]> g<C-]> 
