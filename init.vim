@@ -47,6 +47,8 @@ Plug 'cohama/lexima.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 "emmet-vim
@@ -78,6 +80,19 @@ nnoremap <C-]> g<C-]>
 
 " coc
 autocmd FileType scss setl iskeyword+=@-@
+nmap <silent> <C-]> <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> <C-t> <Plug>(coc-references)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " neoterm 
 nnoremap <c-t><c-t> :Ttoggle<CR>
@@ -121,6 +136,9 @@ nmap <S-Right> <Plug>AirlineSelectNextTab
 
 "アイコンを表示
 let g:fern#renderer = 'nerdfont'
+
+"隠しファイル
+let g:fern#default_hidden=1
 
 "" fzf.vim
 " Ctrl+pでファイル検索を開く
