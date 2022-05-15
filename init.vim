@@ -49,6 +49,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'bronson/vim-trailing-whitespace'
 call plug#end()
 
 "emmet-vim
@@ -76,7 +77,7 @@ let g:user_emmet_settings = {
 "nnoremap <expr> <C-]> execute('LspPeekDefinition') =~ "not supported" ? "\<C-]>" : ":LspDefinition<cr>"
 
 "ctags
-nnoremap <C-]> g<C-]> 
+nnoremap <C-]> g<C-]>
 
 " coc
 autocmd FileType scss setl iskeyword+=@-@
@@ -94,7 +95,7 @@ function! s:show_documentation()
   endif
 endfunction
 
-" neoterm 
+" neoterm
 nnoremap <c-t><c-t> :Ttoggle<CR>
 let g:neoterm_default_mod = 'belowright'
 let g:neoterm_size=15
@@ -120,7 +121,7 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:airline_section_c = '%t %M'
 "let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 " 変更がなければdiffの行数を表示しない
-let g:airline#extensions#hunks#non_zero_only = 1 
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " タブラインの表示を変更する
 let g:airline#extensions#tabline#fnamemod = ':t'
