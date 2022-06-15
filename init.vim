@@ -50,7 +50,15 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'ngmy/vim-rubocop'
+Plug 'APZelos/blamer.nvim'
 call plug#end()
+
+"rubocop"
+let g:vimrubocop_config = './.rubocop.yml'
+
+"blamer"
+let g:blamer_enabled = 1
 
 "emmet-vim
 let g:user_emmet_settings = {
