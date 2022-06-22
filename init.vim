@@ -50,12 +50,17 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'ngmy/vim-rubocop'
+"Plug 'ngmy/vim-rubocop'
 Plug 'APZelos/blamer.nvim'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
+"syntastic
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+"let g:syntastic_ruby_checkers = ['rubocop']
+
 "rubocop"
-let g:vimrubocop_config = './.rubocop.yml'
+"let g:vimrubocop_config = './.rubocop.yml'
 
 "blamer"
 let g:blamer_enabled = 1
