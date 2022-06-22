@@ -2,7 +2,7 @@
 set nobackup
 
 " スワップファイルを作らない
- set noswapfile
+set noswapfile
 
 " init.vimを保存したら自動反映
 autocmd BufWritePost  ~/.config/nvim/init.vim  so ~/.config/nvim/init.vim
