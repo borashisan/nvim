@@ -21,6 +21,8 @@ set expandtab                                                   " tabを複数�
 set tabstop=2                                                   " tabは半角2文字
 set shiftwidth=2
 
+noremap ; :
+
 
 " ヤンクするとクリップボードに保存される
 set clipboard+=unnamed
@@ -90,7 +92,7 @@ let g:user_emmet_settings = {
 "nnoremap <expr> <C-]> execute('LspPeekDefinition') =~ "not supported" ? "\<C-]>" : ":LspDefinition<cr>"
 
 "ctags
-nnoremap <C-]> g<C-]>
+"nnoremap <C-]> g<C-]>
 
 " coc
 autocmd FileType scss setl iskeyword+=@-@
