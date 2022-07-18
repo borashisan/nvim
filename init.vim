@@ -52,7 +52,7 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'bronson/vim-trailing-whitespace'
-"Plug 'ngmy/vim-rubocop'
+Plug 'ngmy/vim-rubocop'
 Plug 'APZelos/blamer.nvim'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
@@ -62,10 +62,11 @@ call plug#end()
 "let g:syntastic_ruby_checkers = ['rubocop']
 
 "rubocop"
-"let g:vimrubocop_config = './.rubocop.yml'
+let g:vimrubocop_config = './.rubocop.yml'
 
 "blamer"
 let g:blamer_enabled = 1
+let g:blamer_template = '<commit-short> <committer>, <committer-time> • <summary>'
 
 "emmet-vim
 let g:user_emmet_settings = {
@@ -113,7 +114,7 @@ endfunction
 " neoterm
 nnoremap <c-t><c-t> :Ttoggle<CR>
 let g:neoterm_default_mod = 'belowright'
-let g:neoterm_size=15
+let g:neoterm_size=20
 let g:neoterm_autoinsert = 1
 
 " カラーテーマ
