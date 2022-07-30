@@ -21,8 +21,8 @@ set expandtab                                                   " tabを複数�
 set tabstop=2                                                   " tabは半角2文字
 set shiftwidth=2
 
+";でコマンドを入力できるようにする
 noremap ; :
-
 
 " ヤンクするとクリップボードに保存される
 set clipboard+=unnamed
@@ -100,7 +100,7 @@ autocmd FileType scss setl iskeyword+=@-@
 nmap <silent> <C-]> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <C-t> <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -119,6 +119,12 @@ let g:neoterm_autoinsert = 1
 
 " カラーテーマ
 colorscheme codedark
+
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none
 
 " アイコンに色をつける
 augroup my-glyph-palette
