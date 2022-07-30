@@ -100,7 +100,7 @@ autocmd FileType scss setl iskeyword+=@-@
 nmap <silent> <C-]> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> <C-t> <Plug>(coc-references)
+nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -169,6 +169,7 @@ fun! FzfOmniFiles()
   endif
 endfun
 nnoremap <C-p> :call FzfOmniFiles()<CR>
+nnoremap <C-e> :History<CR>
 
 " Ctrl+gで文字列検索を開く
 " <S-?>でプレビューを表示/非表示する
