@@ -25,7 +25,7 @@ set shiftwidth=2
 noremap ; :
 
 " ヤンクするとクリップボードに保存される
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 call plug#begin()
@@ -55,6 +55,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'ngmy/vim-rubocop'
 Plug 'APZelos/blamer.nvim'
 Plug 'vim-syntastic/syntastic'
+Plug 'sebdah/vim-delve'
 call plug#end()
 
 "syntastic
@@ -95,12 +96,14 @@ let g:user_emmet_settings = {
 "ctags
 "nnoremap <C-]> g<C-]>
 
+"
+noremap <C-t> <C-o>
 " coc
 autocmd FileType scss setl iskeyword+=@-@
 nmap <silent> <C-]> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> <C-t> <Plug>(coc-references)
+nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -112,7 +115,7 @@ function! s:show_documentation()
 endfunction
 
 " neoterm
-nnoremap <c-t><c-t> :Ttoggle<CR>
+nnoremap <S-T> :Ttoggle<CR>
 let g:neoterm_default_mod = 'belowright'
 let g:neoterm_size=20
 let g:neoterm_autoinsert = 1
